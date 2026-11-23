@@ -10,6 +10,7 @@ const pageTitles = {
   '/doctors': 'Doctors',
   '/appointments': 'Appointments',
   '/schedule': 'Schedule',
+  '/notifications': 'Notifications',
   '/medical-history': 'Medical History',
   '/records': 'Records',
   '/medical-records': 'Medical Records',
@@ -20,6 +21,7 @@ const pageTitles = {
   '/chronic-conditions': 'Chronic Conditions',
   '/documents': 'Medical Documents',
   '/patient-satisfaction': 'Patient Satisfaction',
+  '/billing': 'Billing & Invoices',
   '/admin': 'Admin Panel',
 };
 
