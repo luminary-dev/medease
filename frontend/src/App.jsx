@@ -16,6 +16,7 @@ import MedicalRecords from './pages/MedicalRecords';
 import Prescriptions from './pages/Prescriptions';
 import LabReports from './pages/LabReports';
 import LabReportsComparison from './pages/LabReportsComparison';
+import NotificationsCenter from './pages/NotificationsCenter';
 import LabTestRequests from './pages/LabTestRequests';
 import PermissionManagement from './pages/PermissionManagement';
 import PatientDashboard from './pages/PatientDashboard';
@@ -36,6 +37,8 @@ import PatientSatisfaction from './pages/PatientSatisfaction';
 import ForgotPassword from './pages/ForgotPassword';
 import StatisticsDashboard from './pages/StatisticsDashboard';
 import Billing from './pages/Billing';
+import MedicationDispensing from './pages/MedicationDispensing';
+import DispensingHistory from './pages/DispensingHistory';
 import './App.css';
 
 const R = ({ roles, children }) => <RoleGuard roles={roles}>{children}</RoleGuard>;
@@ -72,10 +75,13 @@ function App() {
             <Route path="doctors/:id" element={<R roles={[ROLES.PATIENT, ROLES.ADMIN]}><DoctorDetail /></R>} />
             <Route path="appointments" element={<R roles={ROLE_GROUPS.PATIENT_CARE}><Appointments /></R>} />
             <Route path="schedule" element={<R roles={ROLE_GROUPS.PATIENT_CARE}><ScheduleCalendar /></R>} />
+            <Route path="notifications" element={<R roles={ROLE_GROUPS.ALL}><NotificationsCenter /></R>} />
             <Route path="medical-history" element={<R roles={ROLE_GROUPS.PATIENT_ONLY}><MedicalHistory /></R>} />
             <Route path="records" element={<R roles={[...ROLE_GROUPS.CLINICAL, ROLES.LAB_TECHNICIAN]}><StaffRecords /></R>} />
             <Route path="medical-records" element={<R roles={ROLE_GROUPS.PATIENT_CARE}><MedicalRecords /></R>} />
             <Route path="prescriptions" element={<R roles={[ROLES.PATIENT, ROLES.DOCTOR, ROLES.PHARMACIST, ROLES.ADMIN]}><Prescriptions /></R>} />
+            <Route path="dispensing" element={<R roles={[ROLES.PHARMACIST, ROLES.ADMIN]}><MedicationDispensing /></R>} />
+            <Route path="dispensing/history" element={<R roles={[ROLES.PHARMACIST, ROLES.ADMIN]}><DispensingHistory /></R>} />
             <Route path="lab-reports" element={<R roles={[ROLES.PATIENT, ROLES.DOCTOR, ROLES.NURSE, ROLES.LAB_TECHNICIAN, ROLES.ADMIN]}><LabReports /></R>} />
             <Route path="lab-reports/comparison" element={<R roles={[ROLES.PATIENT, ROLES.DOCTOR, ROLES.NURSE, ROLES.ADMIN]}><LabReportsComparison /></R>} />
             <Route path="lab-test-requests" element={<R roles={[ROLES.DOCTOR, ROLES.LAB_TECHNICIAN, ROLES.NURSE, ROLES.ADMIN]}><LabTestRequests /></R>} />
