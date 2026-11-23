@@ -28,9 +28,14 @@ MedEase streamlines patient care, appointment scheduling, medical record managem
 - Medicine catalogue search with category and form filtering
 - Doctor prescription templates for reusable medication sets
 - Doctor personal task list with priority ordering and due dates
+- Dedicated nurse dashboard with assigned patient overview, today's appointments, daily task checklist, and department ward information
+- Nurse personal task list with priority ordering and due dates
+- Nurse care notes per patient with full create, edit, and delete support
+- Nurse patient vitals recording (temperature, blood pressure, heart rate, respiratory rate, SpO2, weight, height) with full create, edit, and delete support
 - Vaccination records and chronic condition tracking
 - Treatment plans with checklist items, priority levels, and status tracking
 - Medical document management (S3-backed with presigned URLs)
+- In-browser document viewer for PDFs and images with zoom and pagination controls
 - Prescription refill requests with doctor approval workflow
 - Lab test request workflow with priority levels and lab technician assignment
 - Lab report file uploads (PDF, JPEG, PNG, WebP, DOC, DOCX up to 25 MB) stored in S3 with presigned download URLs and direct file streaming
@@ -40,6 +45,8 @@ MedEase streamlines patient care, appointment scheduling, medical record managem
 - Automated purchase order generation for low-stock inventory items (runs daily), with a structured approval workflow (PENDING → APPROVED → ORDERED → RECEIVED / CANCELLED) and automatic stock updates on receipt
 - Supplier management for tracking medication and equipment suppliers, with full-text search and soft deletion (admin only)
 - System reports with CSV and PDF export for inventory status, monthly inventory usage, appointment summaries, and supplier orders (admin only)
+- Audit log viewer with paginated, filterable, and searchable system activity and security event history, with CSV and PDF export of filtered results (admin only)
+- Inventory data export with CSV and PDF download of current filtered inventory view (admin only)
 - Statistics dashboard with visual metrics for system summary counts, inventory health, 7-day appointment trends, and user activity (admin only)
 - PDF generation for medical records and prescriptions
 - Voice input (speech-to-text) for clinical notes, diagnoses, prescriptions, and other text fields
@@ -50,7 +57,7 @@ MedEase streamlines patient care, appointment scheduling, medical record managem
 - Profile image uploads with cropping
 - File upload security with magic-byte validation and optional VirusTotal malware scanning
 - Data privacy controls with role-based field masking
-- Audit logging and CAPTCHA protection
+- CAPTCHA protection
 
 ### Tech Stack
 
@@ -125,14 +132,14 @@ Password is saved to `.vault-password` (gitignored) for subsequent runs.
 
 When seeding, sample users across all roles are created. All use password **`Password@123`**.
 
-| Role | Email |
-|------|-------|
-| Admin | admin@medease.com |
-| Doctor | kamal.perera@medease.com |
-| Nurse | malini.bandara@medease.com |
-| Lab Tech | nimal.wijesinghe@medease.com |
-| Pharmacist | tharindu.gamage@medease.com |
-| Patient | sarah.fernando@medease.com |
+| Role | Email | Landing Page |
+|------|-------|--------------|
+| Admin | admin@medease.com | /dashboard |
+| Doctor | kamal.perera@medease.com | /doctor-dashboard |
+| Nurse | malini.bandara@medease.com | /nurse-dashboard |
+| Lab Tech | nimal.wijesinghe@medease.com | /dashboard |
+| Pharmacist | tharindu.gamage@medease.com | /dashboard |
+| Patient | sarah.fernando@medease.com | /my-health |
 
 > **Warning:** These credentials are for local development only.
 
