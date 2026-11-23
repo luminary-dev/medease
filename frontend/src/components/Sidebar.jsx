@@ -19,6 +19,8 @@ import {
   FlaskConical,
   PieChart,
   BarChart3,
+  Bell,
+  Package,
 } from 'lucide-react';
 
 
@@ -27,6 +29,8 @@ const navConfig = [
   { path: '/doctor-dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: [ROLES.DOCTOR] },
   { path: '/nurse-dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: [ROLES.NURSE] },
   { path: '/dashboard', label: 'Dashboard', icon: LayoutDashboard, roles: [ROLES.LAB_TECHNICIAN, ROLES.PHARMACIST, ROLES.ADMIN] },
+  // Notifications (available to all)
+  { path: '/notifications', label: 'Notifications', icon: Bell, roles: ROLE_GROUPS.ALL },
   // Patient navigation (alphabetical)
   { path: '/appointments', label: 'Appointments', icon: Calendar, roles: ROLE_GROUPS.PATIENT_ONLY },
   { path: '/doctors', label: 'Doctors', icon: Stethoscope, roles: ROLE_GROUPS.PATIENT_ONLY },
@@ -41,6 +45,8 @@ const navConfig = [
   { path: '/permissions', label: 'Permissions', icon: Shield, roles: [ROLES.ADMIN] },
   { path: '/patient-satisfaction', label: 'Patient Feedback', icon: Star, roles: [ROLES.ADMIN] },
   { path: '/prescriptions', label: 'Prescriptions', icon: Pill, roles: [ROLES.DOCTOR, ROLES.PHARMACIST, ROLES.ADMIN] },
+  { path: '/dispensing', label: 'Medication Dispensing', icon: Package, roles: [ROLES.PHARMACIST, ROLES.ADMIN] },
+  { path: '/dispensing/history', label: 'Dispensing History', icon: Archive, roles: [ROLES.PHARMACIST, ROLES.ADMIN] },
   { path: '/records', label: 'Records', icon: FileText, roles: [...ROLE_GROUPS.CLINICAL, ROLES.LAB_TECHNICIAN] },
   { path: '/lab-test-requests', label: 'Lab Test Requests', icon: FlaskConical, roles: [ROLES.DOCTOR, ROLES.LAB_TECHNICIAN, ROLES.NURSE, ROLES.ADMIN] },
   { path: '/inventory', label: 'Inventory', icon: Archive, roles: [...ROLE_GROUPS.CLINICAL, ROLES.PHARMACIST, ROLES.LAB_TECHNICIAN] },
